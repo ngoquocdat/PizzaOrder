@@ -1,0 +1,62 @@
+@import '../../base';
+
+@mixin currencyIcon {
+    &::before {
+        content: "\0024";
+    }
+}
+
+.pizza-list {
+    li[class*="pizza-item-"] {
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+        line-height: 2.2;
+
+        &.consume-list {
+            width: 20%;
+        }
+
+        &:not(.consume-list) > span {
+            border-left: 1px solid $boxShadow;
+            padding-left: 10px;
+        }
+
+        &:not(.consume-list) > span:nth-child(1) {
+            width: 100px;
+            text-align: left;
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+        span:nth-child(3) {
+            &::before {
+                content: "\0024";
+            }
+        }
+    }
+}
+
+
+.selected-pizza-wrapper {
+    padding-top: 40px;
+
+    ul.pizza-list {
+        li.consume-list {
+            .item-price {
+                @include currencyIcon();
+            }
+        }
+        .consume-price {
+            list-style-type: none;
+            width: 36%;
+            border-top: solid 1px $borderColor;
+            margin-top: 10px;
+            padding-top: 10px;
+            @include currencyIcon();
+        }
+    }
+}

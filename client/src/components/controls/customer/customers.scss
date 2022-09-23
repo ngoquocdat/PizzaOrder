@@ -1,0 +1,23 @@
+@import '../../base';
+
+.customers-wrapper {
+    display: flex;
+    gap: 10px;
+    padding: 15px 15px 15px 40px;
+
+    .customer {
+        padding: 10px;
+        border: solid 1px $borderColor;
+        border-radius: 5px;
+
+        &:hover {
+            cursor: pointer;
+            box-shadow: 5px 5px $boxShadow;
+        }
+
+        &.active {
+            background: linear-gradient(135deg, $blueLinear, $purpleLinear);
+            color: #fff;
+        }
+    }
+}

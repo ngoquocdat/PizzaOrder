@@ -1,0 +1,32 @@
+@import './base';
+
+@mixin currencyIcon {
+    &::before {
+        content: "\0024";
+    }
+}
+
+.title {
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-left: 40px;
+    padding-bottom: 20px;
+}
+
+.tabs-container {
+    display: flex;
+    gap: 10px;
+    padding: 20px 20px;
+
+    div[class*="tab-"] {
+        border: solid 1px $borderColor;
+        padding: 15px;
+        height: fit-content;
+        
+        &:hover {
+            cursor: pointer;
+            box-shadow: 5px 10px $boxShadow;
+        }
+    }
+}
